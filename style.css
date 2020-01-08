@@ -1,0 +1,406 @@
+* {
+    margin: 0;
+    padding: 0;
+} /*Sets the margin and padding of the page to none, so that it can be absolutely defined by the items alone*/
+
+:root { 
+    --dark: #382d2d;
+    --light: #858585;
+    --accent: #ff6449;
+} /*This predefines the most used colours on all pages, so that they can be reused, this also allows me to change colours accross the site more easily*/
+
+header{
+    background-color: var(--dark); /*"var(--dark) refers to the predefined colours just above*/ 
+} /*Defines header background colour*/
+
+nav {
+    margin-left: 10px;
+    border-top: 20px solid var(--dark);
+    border-bottom: 20px solid var(--dark);
+} /*Defines the margin and color around the navigation */
+
+header ul{
+    overflow: auto;
+    list-style-type: none;
+} /*says that the navigation buttons will automatically move when the window is small*/
+
+header li {
+    height: 30px;
+    float: left;
+    margin-right: 0px;
+    border-left: 2px solid #8585857c;
+    padding: 0 10px;
+    font-size: 25px;
+} /*Placement of header text and input of borders between text*/
+
+li:first-child{
+    border-left: none;
+} /*Removes border at the front end of the line*/
+
+header h3 {
+    height: 25px;
+    float: left;
+    margin-right: 5px;
+    padding: 0 10px;
+    font-size: 25px;
+    display:none;
+}/*Style the icons that dont appear until the page is thinner than 44rem*/
+
+header a {
+    text-decoration: none;
+    color: var(--light);
+    font-family: 'Rubik', sans-serif;
+    text-transform: uppercase;
+    transition: all 0.5s ease;
+    letter-spacing: 1px;
+}/*Style the navigation text*/
+
+header a:hover{
+    color: var(--accent);
+    letter-spacing: 4px;
+}/*Creates a hover effect over the navigation text*/
+
+
+
+header h1 {
+    margin-right: 0px;
+    margin-top: 0px;
+    margin-bottom: 5px;
+    height: 25px;
+    float: right;
+    padding: 0 20px;
+    text-decoration: none;
+    color: var(--light);
+    font-family: 'Rubik', sans-serif;
+    text-transform: uppercase;
+    transition: all 0.5s ease;
+    letter-spacing: 1px;
+}/*Style and placement of the name text*/
+
+header h2 {
+    margin-right: 0px;
+    margin-top: 0px;
+    margin-bottom: 5px;
+    height: 25px;
+    float: right;
+    padding: 0 20px;
+    text-decoration: none;
+    color: var(--light);
+    font-family: 'Rubik', sans-serif;
+    text-transform: uppercase;
+    transition: all 0.5s ease;
+    letter-spacing: 1px;
+    display: none; /*Sets the heading to not display so that it doesn't interfere when not needed*/
+}/*Style and placement of h2, which only appears during activation of the width media query*/
+
+header h1:hover{
+    color: var(--accent);
+    letter-spacing: 4px;
+}/*Creates a hover effect over the name text*/
+
+header h2:hover{
+    color: var(--accent);
+    letter-spacing: 4px;
+}/*Creates a hover effect over the initials text*/
+
+body .all .main img {
+    border-style:none;
+    border-radius:100%;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.9);
+    margin-top: 30px;
+    margin-bottom: 30px;
+    height:240px;
+    width:240px;
+} /*Placement and styling of the image container to centre it and make the image have a rounded border*/
+
+body .all .text {
+    color: var(--light);
+}/*Colours the main body text on the homepage*/
+
+.all {
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+} /*Placement and style of the main body of the web (image and paragraph)*/
+
+footer {
+    width:60px;
+    position: fixed;
+    right: 0;
+    bottom: 10px;
+}/*Place entire footer*/
+
+footer a {
+    text-decoration: none;
+    color: var(--light);
+    transition: all 0.5s ease;
+}/*Style the icons*/
+
+footer .icons li {
+    height: 30px;
+    float: right;
+    padding: 0 10px;
+    font-size: 30px;
+    margin-bottom:10px;
+}/*Position the icons within the footer*/
+
+footer a:hover{
+    color: var(--accent);
+    letter-spacing: 5px;
+}/*Add a hover effect to the footer icons*/
+
+@media screen and (max-width: 44rem) { /*Sets media query to activate when the window is thinner than 44rem*/
+    header h1 {
+        display: none;
+    }/*Stops h1 (name in top right) from displaying*/
+
+    header h2 {
+        display: block;
+    }/*Displays h2 (my initials) in place of h1*/
+
+    header nav li{
+        display:none;
+    }/*Removes the navigation text*/
+
+    h3 {
+        display: block;
+    }/*Replaces the navigation text with icons*/
+
+    header a:hover{
+        color: var(--accent);
+        letter-spacing: 0px;
+        font-size: 27px;
+    }/*Changes the hover effect over the navigation to be more fitting of the smaller size*/
+
+}
+
+@media screen and (min-width: 130rem) {
+    body .all .main img {
+        height: 480px;
+        width: 480px;
+    }
+    body .all {
+        font-size: 30px;
+    }
+    footer .icons li {
+        font-size: 50px;
+        height: 50px;
+    }
+}/*Increases font and image size of the homepage for larger displays*/
+
+@media screen and (max-height: 40rem) { /*Sets media query to activate when the window is shorter than 40rem*/
+    footer {
+        width: 100%;
+        position: unset;
+    }/*Replace entire footer under new circumstances*/
+    
+    footer .icons li {
+        float: none;
+        padding: 0 10px;
+        font-size: 30px;
+        margin-top: 15px;
+        text-align:center;
+    }/*Style icons under the new circumstances*/
+    
+    footer a:hover{
+        color: var(--accent);
+        letter-spacing: 0;
+        font-size: 32px;
+    }/*Change the footer hover effect to better fit the new circumstances*/
+}
+
+
+/*Portfolio specific styles*/
+
+h4{
+    margin-right: 0px;
+    margin-top: 0px;
+    margin-bottom: 30px;
+    margin-left: 20px;
+    height: 25px;
+    text-decoration: none;
+    color: var(--light);
+    font-family: 'Rubik', sans-serif;
+    text-transform: uppercase;
+    transition: all 0.5s ease;
+    letter-spacing: 1px;
+    font-size: 25px;
+} /*Style the header of the portfolio page*/
+
+.container {
+    width: 90rem;
+    margin: 2rem auto;
+}/*Sets the default size and margin of the containers in the grid*/
+
+.gallery-item {
+    max-width: 100%;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.5);
+    transition: all .3s;
+    overflow: hidden;
+    position: relative;
+    border-radius: 5px;
+}/*Style the contents of the containers*/
+
+.gallery{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-gap: 1.5rem;
+    grid-auto-rows: minmax(150px, auto);
+    margin-left: 20px;
+    border-radius: 5px;
+}/*Create the grid for the gallery items to exist in*/
+
+.image {
+    opacity: 1;
+    display: block;
+    width:100%;
+    height:auto;
+    transition: .5s ease;
+    backface-visibility: hidden;
+    object-fit: cover;
+    border-radius: 5px;
+}/*Style the images in the gallery items*/
+
+.middle {
+    transition: .5s ease;
+    opacity: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}/*Style the text which appears over the gallery images when hovering*/
+
+.gallery-item:hover .image {
+    filter: grayscale(1);
+} /*Changes the image to grey when hovering*/
+
+.gallery-item:hover .middle {
+    opacity: 1;
+}/*Makes the text in the middle of the images visible when hovering*/
+
+.gallery-item.hover{
+    box-shadow: 0 10px 20px rgba(0,0,0,0.8);
+}/*Changes the shadow of the gallery items when hovering*/
+
+.text{
+    color:white;
+    font-size: 2.5em;
+    padding: 16px 32px;
+    font-family: 'Rubik', sans-serif;
+} /*Styles the text which is in the middle of the gallery images during hover*/
+
+
+/*Media Queries to change the layout of the grid dependent on the width of the page with high specificity*/
+@media (min-width: 130rem){
+    .gallery{
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+    .container{
+        max-width: 100rem;
+    }
+}
+
+@media (max-width: 130rem){
+    .gallery{
+        grid-template-columns: 1fr 1fr;
+    }
+    .container{
+        max-width: 70rem;
+    }
+}
+
+@media (max-width: 75rem){
+    .gallery{
+        grid-template-columns: 1fr 1fr;
+    }
+    .container{
+        max-width: 32rem;
+    }
+}
+
+@media (max-width: 44rem) {
+    h4{
+        text-align: center;
+        margin-left: 0;
+    }
+    .gallery{
+        grid-template-columns: 1fr;
+    }
+    .container{
+        max-width: 25rem;
+    }
+}
+
+@media (max-width: 30rem) {
+    h4{
+        text-align: center;
+        margin-left: 0;
+    }
+    .gallery{ 
+        grid-template-columns: 1fr;
+        margin-left: 0.2rem;
+    }
+    .container{
+        max-width: 24rem;
+    }
+}
+
+@media (max-width: 24rem){
+    .gallery{
+        grid-template-columns: 1fr;
+    }
+    .container{
+        max-width: 20rem;
+    }
+}
+
+@media (max-width: 20rem){
+    .gallery{
+        grid-template-columns: 1fr;
+    }
+    .container{
+        max-width: 18rem;
+    }
+}
+
+/*CV specific style*/
+
+.cv-all{
+    font-family: 'Roberto', sans-serif;
+    color: var(--light);
+    font-size: 25px;
+    list-style-type: none;
+    padding: 2rem;
+    text-align: left;
+    display:grid;
+    grid-template-columns: 1fr 2fr; 
+}
+
+.cv-head h1 {
+    font-family: 'Rubik', sans-serif;
+    font-size: 80px;
+    letter-spacing: 1px;
+    font-weight: 100;
+}
+
+.cv-text hr {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+.cv-text h2{
+    font-weight: 100;
+}
+
+.cv-text h3{
+    margin-bottom: 1rem;
+}
+
+
+.cv-text li{
+    display: flex;
+    justify-content: flex-end;
+    justify-items: self-start;
+    align-items: center;
+    flex-flow: wrap;
+}
