@@ -141,6 +141,7 @@ footer .icons li {
     padding: 0 10px;
     font-size: 30px;
     margin-bottom:10px;
+    list-style-type: none;
 }/*Position the icons within the footer*/
 
 footer a:hover{
@@ -161,7 +162,7 @@ footer a:hover{
         display:none;
     }/*Removes the navigation text*/
 
-    h3 {
+    header h3 {
         display: block;
     }/*Replaces the navigation text with icons*/
 
@@ -363,44 +364,72 @@ h4{
     }
 }
 
-/*CV specific style*/
+/*CV specific style - This section is heavily based on the formatting found here: https://codepen.io/lizcoultersmith/pen/VwYwyKJ 02/01/2020*/
 
 .cv-all{
     font-family: 'Roberto', sans-serif;
     color: var(--light);
     font-size: 25px;
-    list-style-type: none;
     padding: 2rem;
-    text-align: left;
-    display:grid;
-    grid-template-columns: 1fr 2fr; 
+    text-align: left; /*Up to this line styles the text on the cv page*/
+    display:grid; /*This line until the end of the section organises the text on the page*/
+    grid-template-columns: 20rem 1fr;
+    column-gap: 2rem;
+    margin-right: 2rem;
 }
+
+.cv-head {
+    margin-bottom: 3rem;
+} /*This ensures that when the page breaks down the main body doesn't get too close to the title*/
 
 .cv-head h1 {
     font-family: 'Rubik', sans-serif;
     font-size: 80px;
     letter-spacing: 1px;
     font-weight: 100;
-}
+} /*This is text styling for the heading of the page specifically*/
 
 .cv-text hr {
     margin-top: 1rem;
     margin-bottom: 1rem;
-}
+} /*This makes sure that text never gets too close to the seperation line (hr)*/
 
 .cv-text h2{
     font-weight: 100;
-}
+} /*This styles the secondary heading on the cv page so that it is distinguishable from other heading types*/
 
 .cv-text h3{
     margin-bottom: 1rem;
+} /*This makes sure that the main body of text doesn't get too close to its heading*/
+
+.cv-split { /*This splits the second part of the body into two columns*/
+    margin-top: 2rem; /*This ensures that the second part doesn't get too close to the bottom of the main body*/
+    display: grid; /*This creates a grid within the main body to put the two sections into*/
+    grid-template-columns: 1fr 1fr;
+    column-gap: 3rem;  
+    font-size: 18px;
 }
 
-
-.cv-text li{
-    display: flex;
-    justify-content: flex-end;
-    justify-items: self-start;
-    align-items: center;
-    flex-flow: wrap;
+.cv-split h3{
+    font-size: 22px;
+    margin-bottom: 5px;
+    margin-top: 8px;
 }
+
+@media (max-width: 52rem){
+    .cv-all{
+        display: block;
+    } /*This media query makes it so that the text comes under the heading when the page gets too small*/
+}
+
+@media (max-width: 30rem){
+    .cv-head h1{
+        font-size: 60px;
+    }
+    .cv-all{
+        font-size: 20px;
+    }
+    .cv-head{
+        font-size:18px;
+    }
+} /*This media query reduces the size of all of the text on the page approximately proportionally so that it can fit more easily on smaller screens*/
