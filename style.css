@@ -13,37 +13,39 @@ header{
     background-color: var(--dark); /*"var(--dark) refers to the predefined colours just above*/ 
 } /*Defines header background colour*/
 
-nav {
+header nav {
     margin-left: 10px;
     border-top: 20px solid var(--dark);
     border-bottom: 20px solid var(--dark);
-} /*Defines the margin and color around the navigation */
-
-header ul{
+ /*Defines the margin and color around the navigation */
     overflow: auto;
-    list-style-type: none;
 } /*says that the navigation buttons will automatically move when the window is small*/
 
-header li {
+header .navigation li {
     height: 30px;
     float: left;
     margin-right: 0px;
     border-left: 2px solid #8585857c;
     padding: 0 10px;
     font-size: 25px;
+    list-style-type: none;
 } /*Placement of header text and input of borders between text*/
 
-li:first-child{
+header li:first-child{
     border-left: none;
 } /*Removes border at the front end of the line*/
 
-header h3 {
+header .alt-nav{
+    display: none;
+} /*This stops icons from displaying because they are only for use with a smaller page*/
+
+header .alt-nav li {
     height: 25px;
     float: left;
     margin-right: 5px;
     padding: 0 10px;
     font-size: 25px;
-    display:none;
+    list-style-type: none;
 }/*Style the icons that dont appear until the page is thinner than 44rem*/
 
 header a {
@@ -61,8 +63,7 @@ header a:hover{
 }/*Creates a hover effect over the navigation text*/
 
 
-
-header h1 {
+header .navigation h1 {
     margin-right: 0px;
     margin-top: 0px;
     margin-bottom: 5px;
@@ -75,9 +76,9 @@ header h1 {
     text-transform: uppercase;
     transition: all 0.5s ease;
     letter-spacing: 1px;
-}/*Style and placement of the name text*/
+}/*Style and placement of the name text in the top right corner of the screen*/
 
-header h2 {
+header .alt-nav h1 {
     margin-right: 0px;
     margin-top: 0px;
     margin-bottom: 5px;
@@ -91,7 +92,7 @@ header h2 {
     transition: all 0.5s ease;
     letter-spacing: 1px;
     display: none; /*Sets the heading to not display so that it doesn't interfere when not needed*/
-}/*Style and placement of h2, which only appears during activation of the width media query*/
+}/*Style and placement of m initials, which only appears during activation of the width media query*/
 
 header h1:hover{
     color: var(--accent);
@@ -150,19 +151,19 @@ footer a:hover{
 }/*Add a hover effect to the footer icons*/
 
 @media screen and (max-width: 44rem) { /*Sets media query to activate when the window is thinner than 44rem*/
-    header h1 {
+    header .navigation h1 {
         display: none;
-    }/*Stops h1 (name in top right) from displaying*/
+    }/*Stops name in top right from displaying*/
 
-    header h2 {
+    header .alt-nav h1 {
         display: block;
-    }/*Displays h2 (my initials) in place of h1*/
+    }/*Displays my initials in place of my name*/
 
-    header nav li{
+    header .navigation{
         display:none;
     }/*Removes the navigation text*/
 
-    header h3 {
+    header .alt-nav {
         display: block;
     }/*Replaces the navigation text with icons*/
 
@@ -172,6 +173,27 @@ footer a:hover{
         font-size: 27px;
     }/*Changes the hover effect over the navigation to be more fitting of the smaller size*/
 
+}
+
+@media screen and (min-width: 52rem) {
+    body .all .main img {
+        height: 300px;
+        width: 300px;
+    }
+}/*This and the next two media queries change the size of the home page image to better fit the screen*/
+
+@media screen and (min-width: 75rem) {
+    body .all .main img {
+        height: 360px;
+        width: 360px;
+    }
+}
+
+@media screen and (min-width: 100rem) {
+    body .all .main img {
+        height: 400px;
+        width: 400px;
+    }
 }
 
 @media screen and (min-width: 130rem) {
@@ -187,27 +209,6 @@ footer a:hover{
         height: 50px;
     }
 }/*Increases font and image size of the homepage for larger displays*/
-
-@media screen and (max-height: 40rem) { /*Sets media query to activate when the window is shorter than 40rem*/
-    footer {
-        width: 100%;
-        position: unset;
-    }/*Replace entire footer under new circumstances*/
-    
-    footer .icons li {
-        float: none;
-        padding: 0 10px;
-        font-size: 30px;
-        margin-top: 15px;
-        text-align:center;
-    }/*Style icons under the new circumstances*/
-    
-    footer a:hover{
-        color: var(--accent);
-        letter-spacing: 0;
-        font-size: 32px;
-    }/*Change the footer hover effect to better fit the new circumstances*/
-}
 
 
 /*Portfolio specific styles*/
@@ -245,7 +246,6 @@ h4{
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     grid-gap: 1.5rem;
-    grid-auto-rows: minmax(150px, auto);
     margin-left: 20px;
     border-radius: 5px;
 }/*Create the grid for the gallery items to exist in*/
@@ -382,20 +382,26 @@ h4{
     margin-bottom: 3rem;
 } /*This ensures that when the page breaks down the main body doesn't get too close to the title*/
 
+.cv-head ul {
+    list-style-type: none;
+}
+
 .cv-head h1 {
     font-family: 'Rubik', sans-serif;
     font-size: 80px;
     letter-spacing: 1px;
     font-weight: 100;
+    max-width: 25rem;
 } /*This is text styling for the heading of the page specifically*/
 
 .cv-text hr {
-    margin-top: 1rem;
-    margin-bottom: 1rem;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
 } /*This makes sure that text never gets too close to the seperation line (hr)*/
 
 .cv-text h2{
     font-weight: 100;
+    margin-top: 1rem;
 } /*This styles the secondary heading on the cv page so that it is distinguishable from other heading types*/
 
 .cv-text h3{
@@ -410,10 +416,14 @@ h4{
     font-size: 18px;
 }
 
+.cv-split ul {
+    list-style-type: none;
+    margin-bottom: 1rem;
+}
+
 .cv-split h3{
     font-size: 22px;
-    margin-bottom: 5px;
-    margin-top: 8px;
+    margin-bottom: 0.2em;
 }
 
 @media (max-width: 52rem){
@@ -432,4 +442,17 @@ h4{
     .cv-head{
         font-size:18px;
     }
+    .cv-split{
+        display: block;
+    }
+    .cv-split hr{
+        margin-top: 2px;
+        margin-bottom: 2px;
+    }
 } /*This media query reduces the size of all of the text on the page approximately proportionally so that it can fit more easily on smaller screens*/
+
+@media (max-width: 20rem){
+    .cv-all{
+        margin-right: 1rem;
+    }
+}

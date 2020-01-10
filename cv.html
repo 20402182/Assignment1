@@ -1,4 +1,6 @@
-<html lang="en"><head>
+<!DOCTYPE html>
+<html lang="en">
+<head>
     <meta charset="UTF-8"><!--Define character set, this one is mostly english used characters-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -10,82 +12,88 @@
 </head>
 
 <header>
-    <nav>
-        <ul>
-        <li><a href="index.html">Home</a></li>  <!--Lists the contents of the header-->
-        <h3><a href="index.html"><i class="fas fa-home"></i><a></h3><!--Find icons for header (only when small page)-->
-        <li><a href="portfolio.html">Portfolio</a></li>
-        <h3><a href="portfolio.html"><i class="fas fa-folder-open"></i></a></h3>    
-        <li><a href="contact.html">Contact</a></li>
-        <h3><a href="contact.html"><i class="fas fa-phone"></i></a></h3>
-        <li><a href="cv.html">CV</a></li>
-        <h3><a href="cv.html"><i class="fas fa-file"></i></a></h3>
-        <h1 class="heading">Jess Wakelin</h1> <!--Main heading in top right-->
-        <h2 class="heading">JW</h2> <!--Replacement heading for smaller windows-->
-        </ul>
-    </nav>
+    <div class = "navigation"> <!--This is the class to house the normal navigation-->
+        <nav> <!--This is a container for the navigation, it occurs at the top of every page, it also includes the authors name, my name, "Jess Wakelin"-->
+            <ul> <!--This is a list container to house the navigation-->
+                <li><a href="index.html">Home</a></li>  <!--Lists the contents of the navigation in the header-->
+                <li><a href="portfolio.html">Portfolio</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="cv.html">CV</a></li>
+                <h1 class="heading">Jess Wakelin</h1> <!--Main heading in top right-->
+            </ul>
+        </nav>
+    </div> <!--End of the class that contains all the normal navigation-->
+    <div class = "alt-nav"> <!--This class contains an alternative navigation for use when the screen is really small-->
+        <nav> <!--This is container for navigation, it occurs only when the page is small in width, but at the top of every page-->
+            <ul> <!--This is a list container to house the navigation-->
+                <li><a href="index.html"><i class="fas fa-home"></i></a></li> <!--Lists the contents of the alternative navigation of the header-->
+                <li><a href="portfolio.html"><i class="fas fa-folder-open"></i></a></li> 
+                <li><a href="contact.html"><i class="fas fa-phone"></i></a></li>  
+                <li><a href="cv.html"><i class="fas fa-file"></i></a></li>
+                <h1 class="heading">JW</h1> <!--This is a replacement for my name at the top of the page when the page gets too small, it is my initials.-->
+            </ul>
+        </nav>
+    </div>
 </header><!--End of the header-->
 
 
 <body> <!--Beginning of main body-->
 
     <div class="cv-all"> <!--Defines a class to contain all of the body of the website-->
-        <div class ="cv-head">
-            <h1>Jess <br> Wakelin</h1>
-            Northampton<br>
-            University of Northampton<br>
-            United Kingdom<br>
-        </div>
+        <div class ="cv-head"> <!--Defines a class to contain only the head of the body-->
+            <ul> <!--A ul to contain the list in the head of the body-->
+                <h1>Jess Wakelin</h1>
+                <li>Northampton</li> <!--This is the list that appears under the main heading of the page-->
+                <li>University of Northampton</li>
+                <li>United Kingdom</li>
+            </ul><!--End of the list container-->
+        </div> <!--End of the cv head-->
         <div class="cv-text"> <!--A container in which the only paragraph of text will sit-->
             <h2>Experience</h2> <!--This is the first sub heading on the page-->
             <hr><!--This is the seperation of the subheading from the main body of the text, it is a clear line-->
             <h3>Programming</h3> <!--This is a tertiary heading that directly relates to the text-->
             <p>
                 I began computer science and computing when I took a course at 14, during this course I wrote many programs.
-                <br>Noteable examples of programs I have written include: Text compression and Text encryption.
-                <br>Since taking that course I have improved on those same programs a lot and I have written more independently for personal use cases.
-            </p><br><!--This is the first paragraoh and a line break after the paragraph to seperate it from the next one-->
+                Noteable examples of programs I have written include: Text compression and Text encryption.
+                Since taking that course I have improved on those same programs a lot and I have written more independently for personal use cases.
+            </p><!--This is the first paragraph-->
             <p>
                 More recently I have begun to program User Interfaces for applications.
-                <br>I also wrote the code for this website!
-            </p><br><!--This is the second paragraph, formatted very similarly to the first-->
-                <div class="cv-split">
-                    <div>
-                        <h2>Education</h2>
-                        <hr>
-                        <h3>A-levels</h3>
-                        <p>Maths<br>
-                           Physics<br>
-                           Chemistry<br>
-                        </p>
-                        <h3>University</h3>
-                        <p>BSc Computing (Web Technology and Security)<br>
-                           University of Northampton
-                        </p>
-                    </div>
-                    <div>
-                        <h2>Skills</h2>
-                        <hr>
-                        <h3>Computing</h3>
-                        <p>Python<br>
-                           HTML5<br>
-                           CSS<br>
-                           Javascript<br>
-                           Java<br>
-                        </p>
-                    </div>
-                </div>
-        </div>
+                I also wrote the code for this website!
+            </p><!--This is the second paragraph, formatted very similarly to the first-->
+                <div class="cv-split"> <!--This is a class that contains the two columns next to eachother at the bottom of the cv-->
+                    <div class= "left"> <!--This contains the left column-->
+                        <h2>Education</h2> <!--This is a header that refers to the entire left column-->
+                        <hr><!--This is a line to seperate the heading from the column it refers to-->
+                        <h3>A-levels</h3> <!--This is a subheading within the left column-->
+                        <ul>
+                            <li>Maths</li> <!--This is a list that comes under the first subheading in the left column-->
+                            <li>Physics</li>
+                            <li>Chemistry</li>
+                        </ul> <!--The list is contained by a ul-->
+                        
+                        <h3>University</h3> <!--This is a second subheading within the left column-->
+                        <ul>
+                            <li>BSc Computing (Web Technology and Security)</li> <!--This is a list to come under the second subheading-->
+                            <li>University of Northampton</li>
+                        </ul>
+                    </div><!--End of the left column container-->
+                    <div class="right"> <!--This is a container for the right column-->
+                        <h2>Skills</h2> <!--This is another heading that refers to the entire column, this time the right column-->
+                        <hr> <!--This is another line to seperate the heading from the column it refers to-->
+                        <h3>Computing</h3> <!--This is a subheading in the right column, it is the only subheading-->
+                        <ul>
+                            <li>Python</li> <!--This is a list that comes under the right column, it is the only one-->
+                            <li>HTML5</li>
+                            <li>CSS</li>
+                            <li>Javascript</li>
+                            <li>Java</li>
+                        </ul> <!--This is the end of the container for the list in the second column-->
+                    </div> <!--This is the end of the container for the right column-->
+                </div> <!--This is the end of the container for both of the columns -->
+        </div><!--This is the end of the cv-text class, containing all of the main text of the cv-->
 
     </div> <!--End of the all class-->
 
 </body> <!--End of main body-->
-<footer><!--Define a footer-->
-    <div class="icons"><!--Define a section of the footer for icons-->
-        <ul>
-            <li><a href="https://github.com/20402182"><i class="fab fa-github-alt"></i></li>
-            <li><a href="mailto:wakelinjess@gmail.com"><i class="fas fa-envelope"></i></li><!--Footer icons and links-->
-        </ul>
-    </div>
-</footer><!--End of footer-->
 </html><!--end of the page-->

@@ -1,4 +1,6 @@
-<html lang="en"><head>
+<!DOCTYPE html>
+<html lang="en">
+<head>
     <meta charset="UTF-8"><!--Define character set, this one is mostly english used characters-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -10,33 +12,50 @@
 </head>
 
 <header>
-    <nav>
-        <ul>
-        <li><a href="index.html">Home</a></li>  <!--Lists the contents of the header-->
-        <h3><a href="index.html"><i class="fas fa-home"></i><a></h3><!--Find icons for header (only when small page)-->
-        <li><a href="portfolio.html">Portfolio</a></li>
-        <h3><a href="portfolio.html"><i class="fas fa-folder-open"></i></a></h3>    
-        <li><a href="contact.html">Contact</a></li>
-        <h3><a href="contact.html"><i class="fas fa-phone"></i></a></h3>
-        <li><a href="cv.html">CV</a></li>
-        <h3><a href="cv.html"><i class="fas fa-file"></i></a></h3>
-        <h1 class="heading">Jess Wakelin</h1> <!--Main heading in top right-->
-        <h2 class="heading">JW</h2> <!--Replacement heading for smaller windows-->
-        </ul>
-    </nav>
+    <div class = "navigation"> <!--This is the class to house the normal navigation-->
+        <nav> <!--This is a container for the navigation, it occurs at the top of every page, it also includes the authors name, my name, "Jess Wakelin"-->
+            <ul> <!--This is a list container to house the navigation-->
+                <li><a href="index.html">Home</a></li>  <!--Lists the contents of the navigation in the header-->
+                <li><a href="portfolio.html">Portfolio</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="cv.html">CV</a></li>
+                <h1 class="heading">Jess Wakelin</h1> <!--Main heading in top right-->
+            </ul>
+        </nav>
+    </div> <!--End of the class that contains all the normal navigation-->
+    <div class = "alt-nav"> <!--This class contains an alternative navigation for use when the screen is really small-->
+        <nav> <!--This is container for navigation, it occurs only when the page is small in width, but at the top of every page-->
+            <ul> <!--This is a list container to house the navigation-->
+                <li><a href="index.html"><i class="fas fa-home"></i></a></li> <!--Lists the contents of the alternative navigation of the header-->
+                <li><a href="portfolio.html"><i class="fas fa-folder-open"></i></a></li> 
+                <li><a href="contact.html"><i class="fas fa-phone"></i></a></li>  
+                <li><a href="cv.html"><i class="fas fa-file"></i></a></li>
+                <h1 class="heading">JW</h1> <!--This is a replacement for my name at the top of the page when the page gets too small, it is my initials.-->
+            </ul>
+        </nav>
+    </div>
 </header><!--End of the header-->
+
+<footer><!--Define a footer-->
+    <div class="icons"><!--Define a section of the footer for icons-->
+        <ul>
+            <li><a href="https://github.com/20402182"><i class="fab fa-github-alt"></i></a></li>
+            <li><a href="mailto:wakelinjess@gmail.com"><i class="fas fa-envelope"></i></a></li><!--Footer icons and links-->
+        </ul>
+    </div>
+</footer><!--End of footer-->
 
 <body> <!--Beginning of main body-->
 
     <div class="all"> <!--Defines a class to contain all of the body of the website-->
         
         <div class="main"> <!--A container in which the image sits-->
-            <img src="images/me(optimised).jpg" alt="nopic.png"><!--References the image to go in the container, and an alternate-->
+            <img src="images/me(optimised).jpg" alt="Picture of site author"><!--References the image to go in the container, and an alternate-->
         </div>
 
         <div class="text"> <!--A container in which the only paragraph of text will sit-->
                 <p>
-                    Hi, my name is Jess. <br> <!--Content of paragraph-->
+                    Hi, my name is Jess.<br> <!--Content of paragraph-->
                     This is my site.
                 </p>
         </div>
@@ -45,12 +64,4 @@
 
 </body> <!--End of main body-->
 
-<footer><!--Define a footer-->
-        <div class="icons"><!--Define a section of the footer for icons-->
-            <ul>
-                <li><a href="https://github.com/20402182"><i class="fab fa-github-alt"></i></li>
-                <li><a href="mailto:wakelinjess@gmail.com"><i class="fas fa-envelope"></i></li><!--Footer icons and links-->
-            </ul>
-        </div>
-</footer><!--End of footer-->
 </html><!--end of the page-->
