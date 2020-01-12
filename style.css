@@ -10,7 +10,9 @@
 } /*This predefines the most used colours on all pages, so that they can be reused, this also allows me to change colours accross the site more easily*/
 
 header{
-    background-color: var(--dark); /*"var(--dark) refers to the predefined colours just above*/ 
+    background-color: var(--dark); /*"var(--dark)" refers to the predefined colours just above*/ 
+    position: fixed; /*This makes sure that the header stays motionless at the top of the page*/
+    width: 100%;/*Makes sure that the header fills the entire p*/
 } /*Defines header background colour*/
 
 header nav {
@@ -25,7 +27,7 @@ header .navigation li {
     height: 30px;
     float: left;
     margin-right: 0px;
-    border-left: 2px solid #8585857c;
+    border-left: 2px solid #8585857c; /*Creates a seperation border between the navigation elements, different to the coloured border that makes up the header banner*/
     padding: 0 10px;
     font-size: 25px;
     list-style-type: none;
@@ -63,7 +65,7 @@ header a:hover{
 }/*Creates a hover effect over the navigation text*/
 
 
-header .navigation h1 {
+header .navigation li:last-child {
     margin-right: 0px;
     margin-top: 0px;
     margin-bottom: 5px;
@@ -76,9 +78,10 @@ header .navigation h1 {
     text-transform: uppercase;
     transition: all 0.5s ease;
     letter-spacing: 1px;
+    border-left: none;
 }/*Style and placement of the name text in the top right corner of the screen*/
 
-header .alt-nav h1 {
+header .alt-nav li:last-child {
     margin-right: 0px;
     margin-top: 0px;
     margin-bottom: 5px;
@@ -91,6 +94,7 @@ header .alt-nav h1 {
     text-transform: uppercase;
     transition: all 0.5s ease;
     letter-spacing: 1px;
+    border-left: none;
     display: none; /*Sets the heading to not display so that it doesn't interfere when not needed*/
 }/*Style and placement of m initials, which only appears during activation of the width media query*/
 
@@ -108,7 +112,7 @@ body .all .main img {
     border-style:none;
     border-radius:100%;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.9);
-    margin-top: 30px;
+    margin-top: 100px;
     margin-bottom: 30px;
     height:240px;
     width:240px;
@@ -125,7 +129,7 @@ body .all .text {
 
 footer {
     width:60px;
-    position: fixed;
+    position: fixed; /*Ensures that the footer is always in the same place at the bottom of the page*/
     right: 0;
     bottom: 10px;
 }/*Place entire footer*/
@@ -150,7 +154,7 @@ footer a:hover{
     letter-spacing: 5px;
 }/*Add a hover effect to the footer icons*/
 
-@media screen and (max-width: 44rem) { /*Sets media query to activate when the window is thinner than 44rem*/
+@media (max-width: 44rem) { /*Sets media query to activate when the window is thinner than 44rem*/
     header .navigation h1 {
         display: none;
     }/*Stops name in top right from displaying*/
@@ -175,28 +179,28 @@ footer a:hover{
 
 }
 
-@media screen and (min-width: 52rem) {
+@media (min-width: 52rem) {
     body .all .main img {
         height: 300px;
         width: 300px;
     }
 }/*This and the next two media queries change the size of the home page image to better fit the screen*/
 
-@media screen and (min-width: 75rem) {
+@media (min-width: 75rem) {
     body .all .main img {
         height: 360px;
         width: 360px;
     }
 }
 
-@media screen and (min-width: 100rem) {
+@media (min-width: 100rem) {
     body .all .main img {
         height: 400px;
         width: 400px;
     }
 }
 
-@media screen and (min-width: 130rem) {
+@media (min-width: 130rem) {
     body .all .main img {
         height: 480px;
         width: 480px;
@@ -213,7 +217,7 @@ footer a:hover{
 
 /*Portfolio specific styles*/
 
-h4{
+.container h1{
     margin-right: 0px;
     margin-top: 0px;
     margin-bottom: 30px;
@@ -231,7 +235,17 @@ h4{
 .container {
     width: 90rem;
     margin: 2rem auto;
+    margin-top: 0;
+    padding-top: 100px;
+    overflow-y: visible;
 }/*Sets the default size and margin of the containers in the grid*/
+
+.portfolio {
+    height: 75vh;
+    overflow-y: scroll;
+    margin-top: 20px;
+    margin-bottom: 2px;
+} /*Styles and sizes the portfolio container"*/
 
 .gallery-item {
     max-width: 100%;
@@ -243,10 +257,10 @@ h4{
 }/*Style the contents of the containers*/
 
 .gallery{
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    display: grid; /*There is no need to address column or row dimensions here as they are included in the media queries that follow*/
     grid-gap: 1.5rem;
     margin-left: 20px;
+    margin-right: 20px;
     border-radius: 5px;
 }/*Create the grid for the gallery items to exist in*/
 
@@ -364,18 +378,50 @@ h4{
     }
 }
 
-/*CV specific style - This section is heavily based on the formatting found here: https://codepen.io/lizcoultersmith/pen/VwYwyKJ 02/01/2020*/
+/*These 4 media queries change the size of the portfolio viewing window so that it is only 
+necessary to have a full page scrollbar on extremely short pages*/
+@media (max-height: 40rem){
+    .portfolio {
+        height: 70vh;
+    }
+}
+
+@media (max-height: 32rem){
+    .portfolio {
+        height: 65vh;
+    }
+}
+
+@media (max-height: 28rem){
+    .portfolio{
+        height: 60vh;
+    }
+}
+
+@media (max-height: 28rem){
+    body{
+        overflow-y: scroll;
+    }
+    .portfolio{
+        height: 100%;
+    }/*Ensures that now a full page scroll bar is necessary, it is the only one available*/
+}
+
+/*CV specific style - This section is heavily based on the formatting found here: https://codepen.io/lizcoultersmith/pen/VwYwyKJ on 02/01/2020
+the code however is original*/
 
 .cv-all{
     font-family: 'Roberto', sans-serif;
     color: var(--light);
     font-size: 25px;
     padding: 2rem;
+    padding-top: 100px;
     text-align: left; /*Up to this line styles the text on the cv page*/
     display:grid; /*This line until the end of the section organises the text on the page*/
     grid-template-columns: 20rem 1fr;
     column-gap: 2rem;
     margin-right: 2rem;
+    max-height: 80vh; /*Makes sure that the content doesn't flow beyond the viewport*/
 }
 
 .cv-head {
@@ -386,7 +432,7 @@ h4{
     list-style-type: none;
 }
 
-.cv-head h1 {
+.cv-head ul li:first-child {
     font-family: 'Rubik', sans-serif;
     font-size: 80px;
     letter-spacing: 1px;
@@ -397,6 +443,9 @@ h4{
 .cv-text hr {
     margin-top: 0.5em;
     margin-bottom: 0.5em;
+    background-color: var(--light);
+    color: var(--light); /*Colours hr so that it is one solid line always*/
+    height: 0.5px;
 } /*This makes sure that text never gets too close to the seperation line (hr)*/
 
 .cv-text h2{
@@ -456,3 +505,132 @@ h4{
         margin-right: 1rem;
     }
 }
+
+/*Contact form specific styles*/
+
+.form {
+    max-width: 100%;
+    padding: 2rem;
+    padding-top: 100px;
+    max-height: 80vh;
+} /*This is the styling for the container in which the form sits */
+
+.form h1 {
+    font-family: 'Rubik', sans-serif;
+    font-size: 80px;
+    letter-spacing: 1px;
+    font-weight: 100;
+    color: var(--light);
+    padding-bottom: 2rem;
+} /*This styles the header of the form page*/
+
+.form form {
+    max-width: 100%;
+    max-height: 100%;
+    font-family: 'Roboto', sans-serif;
+    color: var(--light);
+    font-size: 22px;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 0.3fr;
+    gap: 1rem;
+} /*This styles the form itself, and makes sure that no fields or buttons are too close together*/
+
+.form .field {
+    width: 100%;
+    height: 100%;
+} /*This is the sizing for an individual field*/
+
+.form label {
+    margin-left: 8px;
+} /*This places the label of each field with respect to the field, so that it is not inline with the rounded edge*/
+
+.form input {
+    border-radius: 8px;
+    border: 2px solid var(--dark);
+    box-sizing: border-box;
+    transition-duration: 0.5s;
+    width: 100%;
+    height: 2rem;
+    font-family: 'Roboto', sans-serif;
+    color: var(--light);
+    font-size: 22px;
+    padding: 3%;
+} /*This styles each inout box to have a coloured border and changes the font inside the box when the user types*/
+
+.form input:focus{
+    border-color: var(--accent);
+    outline: none;
+} /*This changes the colour of the border of the box the user is currently typing in*/
+
+.top {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    row-gap: 0.5em;
+    column-gap: 2rem;
+} /*This changes the organisation of the first 4 fields to better fit onto the page*/
+
+textarea {
+    height: 80%;
+    width: 100%;
+    border: 2px solid var(--dark);
+    box-sizing: border-box;
+    color: var(--light);
+    border-radius: 8px;
+    transition-duration: 0.5s;
+    padding: 1%;
+    font-size: 18px;
+    resize: none;
+} /*This changes the size and style of the final field, the largest one*/
+
+textarea:focus{
+    border-color: var(--accent);
+    outline: none;
+} /*This creates the same "whilst typing" effect that the rest of the fields have, on the final field*/
+
+button {
+    max-width: 15%;
+    max-height: 100%;
+    background-color: var(--dark);
+    color: var(--light);
+    border-radius: 8px;
+    border: none; 
+    box-sizing: border-box;  
+    transition-duration: 0.5s;
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 1px;
+    font-size: 100%;
+}/*This styles the "SUBMIT" button at the bottom of the form, to change the colour, size, shape and the font it contains*/
+
+button:focus, button:hover{
+    background-color: var(--accent);
+    color: var(--dark);
+    outline: none;
+} /*This creates a hover effect on the button, as well as a "focus" effect, which look the same when they occur*/
+/*Focus, in this context, is when the button is selected by pressing tab*/
+
+@media (max-width: 52rem){
+    button{
+        font-size: 18px;
+        max-height: 50px;
+        max-width: 100px;
+    }/*This changes the size and shape of the button*/
+    .top{
+        grid-template-columns: 1fr;
+    } /*This part changes the top 4 fields to be in a single line so they don't shrink too much being next to eachother*/
+    form{
+        margin-right: 2rem;
+        grid-template-rows: 1fr 1fr 0.1fr;
+        gap: 20px;
+}
+    .form h1 {
+        font-size: 50px;
+    }
+}/*This media query changes all of the forms properties to fit on the smallest type of page*/
+
+@media (max-width: 24rem){
+    .form h1{
+        font-size: 40px;
+    }
+}/*This changes just the size of the heading of the form page to make sure it stays on one line*/

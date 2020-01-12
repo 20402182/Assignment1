@@ -19,7 +19,7 @@
                 <li><a href="portfolio.html">Portfolio</a></li>
                 <li><a href="contact.html">Contact</a></li>
                 <li><a href="cv.html">CV</a></li>
-                <h1 class="heading">Jess Wakelin</h1> <!--Main heading in top right-->
+                <li>Jess Wakelin</li> <!--Main heading in top right-->
             </ul>
         </nav>
     </div> <!--End of the class that contains all the normal navigation-->
@@ -30,7 +30,7 @@
                 <li><a href="portfolio.html"><i class="fas fa-folder-open"></i></a></li> 
                 <li><a href="contact.html"><i class="fas fa-phone"></i></a></li>  
                 <li><a href="cv.html"><i class="fas fa-file"></i></a></li>
-                <h1 class="heading">JW</h1> <!--This is a replacement for my name at the top of the page when the page gets too small, it is my initials.-->
+                <li>JW</li> <!--This is a replacement for my name at the top of the page when the page gets too small, it is my initials.-->
             </ul>
         </nav>
     </div>
@@ -46,16 +46,36 @@
 </footer><!--End of footer-->
 
 <body> <!--Beginning of main body-->
+ <!--Much of the code in this form originated from https://codepen.io/dapacreative/pen/bdzYEe on 11/01/2020-->
+    <div class="form"> <!--Defines a class to contain all of the body of the website-->
+        <h1>Contact me</h1> <!--This is the heading of the form page-->
+        <form action="#"> <!--This refers to the "SUBMIT" button, it currently does noting-->
+            <div class="top"> <!--This holds the identical fields of the form-->
+                <div class="field"><!--This holds one form field-->
+                    <label for="name">Your Name</label><!--This makes the label for the field, which sits above the field-->
+                    <input type="text" id="name"/><!--This makes the field and gives it a referencable idenfication so that the label knows which field it belongs to-->
+                </div>
+                <div class="field">
+                    <label for="employer">Employers Name</label>
+                    <input type="text" id="employer"/>
+                </div>
+                <div class="field">
+                    <label for="location">Location</label>
+                    <input type="text" id="location"/>
+                </div>
+                <div class="field">
+                    <label for="email">Email</label>
+                    <input type="email" id="email"/>
+                </div>
+            </div><!--This is the end of the identical fields-->
+            <div class="field"><!--This is a different kind of field, it is seperate so that it can be larger-->
+                <label for="description">Job Description</label> <!--As before the label sits just above the field-->
+                <textarea name="text" id="description"> </textarea><!--The field is now called a "text area" because it will encompass a much larger amount of user inputted text than a normal field-->
+            </div>
+            <button type="submit">Submit</button><!--This is a submit button at the bottom of the page, it doesn't do anything-->
+        </form><!--This is the end of teh form-->
 
-    <div class="all"> <!--Defines a class to contain all of the body of the website-->
-
-        <div class="text"> <!--A container in which the only paragraph of text will sit-->
-                <p>
-                    This is the contact page, currently empty.
-                </p>
-        </div>
-
-    </div> <!--End of the all class-->
+    </div> <!--End of the form container-->
 
 </body> <!--End of main body-->
 </html><!--end of the page-->
